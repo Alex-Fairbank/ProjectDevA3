@@ -1,0 +1,179 @@
+<!--
+    Jon Alex Fairbank 7252927
+    PROG2430
+    I couldn't get the custom colours to work without modifying the lib
+-->
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>JFFeedbackA1</title>
+    <!--        Meta data   -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <script src="js/lib/jquery-2.1.4.js"></script>
+    <script src="js/lib/jquery.mobile-1.4.5.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/lib/jquery.mobile-1.4.5.css">
+</head>
+<body>
+<div id="JFHomePage" data-role="page" data-url="JFHomePage">
+    <header data-role="header" data-theme="b">
+        <h1>Home page</h1>
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#JFHomePage" data-icon="home" class="ui-btn-active ui-state-persist">Home</a></li>
+                <li><a href="#JFAddFeedbackPage" data-icon="plus">Add</a></li>
+                <li><a href="#JFViewFeedbackPage" data-icon="grid">Reviews</a></li>
+                <li><a href="#JFSettingsPage" data-icon="gear">Settings</a></li>
+            </ul>
+        </div>
+
+    </header>
+        <section data-role="content">
+            <h2> Alex Fairbank's Feedback A1 App</h2>
+            <p> Welcome to the Alex Fairbank Feedback A1 app.
+                A prototype designed for mobile programming class. This is the first iteration to keep track of different places you've visited along with your reviews</p>
+            <p align="center">
+                <img src="img/JF-icon.png" alt="Where is he?">
+            </p>
+            <p> Please feel free to call if you have any suggestions </p>
+        </section>
+    <section>
+        <ul data-role="listview" data-split-icon="gear" data-inset="true">
+            <li><a data-icon="plus">Call: 519-747-4747</a></li>
+            <li><a href="mailto:jfairbank2927@conestogac.on.ca" data-icon="plus">jfairbank2927@conestogac.on.ca</a></li>
+            <li><a href="https://www.conestogac.on.ca/" data-icon="plus">Conestoga College</a></li>
+        </ul>
+    </section>
+
+        <footer data-role="footer" data-theme="b" style="width: 100%; position: fixed; bottom: 0">
+            <h4>&copy;Jonathan (Alex) Fairbank</h4>
+        </footer>
+</div>
+
+    <!-- Add feedback page -->
+    <div id="JFAddFeedbackPage" data-role="page" data-url="JFAddFeedbackPage">
+        <header data-role="header" data-theme="b">
+            <h1>Add a Feedback</h1>
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#JFHomePage" data-icon="home">Home</a></li>
+                    <li><a href="#JFAddFeedbackPage" data-icon="plus" class="ui-btn-active ui-state-persist">Add</a></li>
+                    <li><a href="#JFViewFeedbackPage" data-icon="grid">Reviews</a></li>
+                    <li><a href="#JFSettingsPage" data-icon="gear">Settings</a></li>
+                </ul>
+            </div>
+        </header>
+        <form id="JFAddForm">
+        <section data-role="content">
+            Business Name: <input type="text" id="JFtxtBusinessName" name="JFtxtBusinessName">
+            Reviewer Email: <input type="text" id="JFtxtRevEmail" name="JFtxtRevEmail">
+            Reviewer Comments:<textarea type="text area" id="JFtxtRevComment" name="JFtxtRevComment"></textarea>
+            Overall Rating (1-100):<input type="number" id="JFtxtRating" name="JFtxtRating" min="0" max="100">
+            <button type="button" id="JFsaveButton" style="width: 25%; background-color:#22AADD ; color:#ffffff">Save</button>
+        </section>
+        </form>
+    <footer data-role="footer" data-theme="b" style="width: 100%; position: fixed; bottom: 0">
+        <h4>&copy;Jonathan (Alex) Fairbank</h4>
+    </footer>
+    </div>
+
+<!-- View feedback page -->
+<div id="JFViewFeedbackPage" data-role="page" data-url="JFViewFeedbackPage">
+    <header data-role="header" data-theme="b">
+        <h1>List of Reviews</h1>
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#JFHomePage" data-icon="home">Home</a></li>
+                <li><a href="#JFAddFeedbackPage" data-icon="plus">Add</a></li>
+                <li><a href="#JFViewFeedbackPage" data-icon="grid" class="ui-btn-active ui-state-persist">Reviews</a></li>
+                <li><a href="#JFSettingsPage" data-icon="gear">Settings</a></li>
+            </ul>
+        </div>
+    </header>
+    <section data-role="content">
+        <!-- Listview section also works as href to edit feedback page -->
+        <ul data-role="listview" data-inset="true">
+            <li>
+                <a href="#JFEditFeedbackPage">
+                    <h2>Business Name:  Happy Animals Zoo</h2>
+               <p> Reviewer Email: MonkeywithanIpad@gmail.com</p>
+                <p>Comments: Help I'm trapped, let me out!</p>
+                <p> Overall Rating: 1%</p>
+            </a>
+            </li>
+
+            <li><a><h2>Business Name: Finding Balance Athletics</h2>
+                <p> Reviewer Email: MrMan@gmail.com</p>
+                <p>Comments: Love the inspiration!</p>
+                <p> Overall Rating: 100%</p>
+            </a>
+            </li>
+        </ul>
+    </section>
+    <footer data-role="footer" data-theme="b" style="width: 100%; position: fixed; bottom: 0">
+        <h4>&copy;Jonathan (Alex) Fairbank</h4>
+    </footer>
+</div>
+<!-- Edit Feedback Page -->
+<div id="JFEditFeedbackPage" data-role="page" data-url="JFEditFeedbackPage">
+    <header data-role="header" data-theme="b">
+        <h1>Modify Feedback</h1>
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#JFHomePage" data-icon="home">Home</a></li>
+                <li><a href="#JFAddFeedbackPage" data-icon="plus" >Add</a></li>
+                <li><a href="#JFViewFeedbackPage" data-icon="grid" class="ui-btn-active ui-state-persist">Reviews</a></li>
+                <li><a href="#JFEditFeedbackPage" data-icon="gear">Settings</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Form to process reviews -->
+    <form id="JFModifyForm">
+        <section data-role="content">
+            <!-- Comedy -->
+            Business Name: <input type="text" id="JFtxtBusinessName" name="JFtxtBusinessName" value="Toronto Zoo">
+            Reviewer Email: <input type="text" id="JFtxtRevEmail" name="JFtxtRevEmail" value="MonkeyWithAnIpad@gmail.com">
+            Reviewer Comments:<textarea type="text area" id="JFtxtRevComment" name="JFtxtRevComment"> Please let me out!</textarea>
+            Overall Rating (1-100):<input type="number" id="JFtxtRating" name="JFtxtRating" min="0" max="100" value="1">
+            <!-- Table to line the buttons-->
+            <table>
+                <tr>
+                <td><button  id="JFcancelButton" style= "background-color:yellow;">Cancel</button></td>
+                <td><button  id="JFdeleteButton" style="background-color:#333333; color:white">Delete</button></td>
+                <td><button  id="JFupdateButton" style="background-color:#22aadd; color:white">Update</button></td>
+                </tr>
+            </table>
+        </section>
+    </form>
+    <footer data-role="footer" data-theme="b" style="width: 100%; position: fixed; bottom: 0">
+        <h4>&copy;Jonathan (Alex) Fairbank</h4>
+    </footer>
+    </div>
+    <!-- Settings Page -->
+    <div id="JFSettingsPage" data-role="page" data-url="JFSettingsPage">
+        <header data-role="header" data-theme="b">
+            <h1>Settings</h1>
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#JFHomePage" data-icon="home">Home</a></li>
+                    <li><a href="#JFAddFeedbackPage" data-icon="plus" >Add</a></li>
+                    <li><a href="#JFViewFeedbackPage" data-icon="grid" class="ui-btn-active ui-state-persist">Reviews</a></li>
+                    <li><a href="#JFSettingsPage" data-icon="gear">Settings</a></li>
+                </ul>
+            </div>
+        </header>
+            <section data-role="content">
+                Default reviewer Email: <input type="text" id="JFtxtdefaultEmail" name="defaultEmail" value="MonkeyWithAnIpad@gmail.com">
+                    <button  id="JFSaveDefaultsButton" style="background-color: #22aadd; color:white;">Save Defaults</button>
+                    <button  id="JFClearDB" style="background-color: #333333; color:white;">Clear Database</button>
+            </section>
+
+        <footer data-role="footer" data-theme="b" style="width: 100%; position: fixed; bottom: 0">
+            <h4>&copy;Jonathan (Alex) Fairbank</h4>
+        </footer>
+    </div>
+
+</body>
+</html>
